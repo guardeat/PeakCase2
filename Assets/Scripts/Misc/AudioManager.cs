@@ -12,7 +12,6 @@ namespace PCase
         public AudioClip clip;
     }
 
-    [RequireComponent(typeof(AudioSource))]
     public class AudioManager : MonoBehaviour
     {
         public static AudioManager Instance { get; private set; }
@@ -23,6 +22,9 @@ namespace PCase
         private Dictionary<string, AudioClip> clipLookup;
 
         private AudioSource audioSource;
+
+        private AudioClip currentClip;
+        private float currentClipStartTime;
 
         private void Awake()
         {
@@ -49,10 +51,24 @@ namespace PCase
 
         public void Play(string name)
         {
-            if (clipLookup.TryGetValue(name, out AudioClip clip))
+            if (!clipLookup.TryGetValue(name, out AudioClip newClip))
+                return;
+
+            if (audioSource.isPlaying && currentClip != null)
             {
-                audioSource.PlayOneShot(clip);
+                float elapsed = Time.time - currentClipStartTime;
+
+                if (elapsed < currentClip.length * 0.5f)
+                {
+                    return;
+                }
+                audioSource.Stop();
             }
+
+            audioSource.clip = newClip;
+            audioSource.Play();
+            currentClip = newClip;
+            currentClipStartTime = Time.time;
         }
     }
 
