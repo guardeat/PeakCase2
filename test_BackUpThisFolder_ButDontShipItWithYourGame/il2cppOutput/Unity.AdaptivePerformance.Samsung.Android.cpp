@@ -1552,18 +1552,20 @@ struct IAdaptivePerformanceSettings_tFB49C60F821F093D3F18E8DC115E7D929E6C86C8  :
 	bool ___m_Logging_4;
 	// System.Boolean UnityEngine.AdaptivePerformance.IAdaptivePerformanceSettings::m_AutomaticPerformanceModeEnabled
 	bool ___m_AutomaticPerformanceModeEnabled_5;
+	// System.Boolean UnityEngine.AdaptivePerformance.IAdaptivePerformanceSettings::m_AutomaticGameModeEnabled
+	bool ___m_AutomaticGameModeEnabled_6;
 	// System.Boolean UnityEngine.AdaptivePerformance.IAdaptivePerformanceSettings::m_EnableBoostOnStartup
-	bool ___m_EnableBoostOnStartup_6;
+	bool ___m_EnableBoostOnStartup_7;
 	// System.Int32 UnityEngine.AdaptivePerformance.IAdaptivePerformanceSettings::m_StatsLoggingFrequencyInFrames
-	int32_t ___m_StatsLoggingFrequencyInFrames_7;
+	int32_t ___m_StatsLoggingFrequencyInFrames_8;
 	// UnityEngine.AdaptivePerformance.AdaptivePerformanceIndexerSettings UnityEngine.AdaptivePerformance.IAdaptivePerformanceSettings::m_IndexerSettings
-	AdaptivePerformanceIndexerSettings_t3D9418B7302C8FCA3344719FF10FBADFD2F1CDC6* ___m_IndexerSettings_8;
+	AdaptivePerformanceIndexerSettings_t3D9418B7302C8FCA3344719FF10FBADFD2F1CDC6* ___m_IndexerSettings_9;
 	// UnityEngine.AdaptivePerformance.AdaptivePerformanceScalerSettings UnityEngine.AdaptivePerformance.IAdaptivePerformanceSettings::m_ScalerSettings
-	AdaptivePerformanceScalerSettings_tAF8002CE95F36DE71E945DA73AADB6783EB2FFD8* ___m_ScalerSettings_9;
+	AdaptivePerformanceScalerSettings_tAF8002CE95F36DE71E945DA73AADB6783EB2FFD8* ___m_ScalerSettings_10;
 	// UnityEngine.AdaptivePerformance.AdaptivePerformanceScalerProfile[] UnityEngine.AdaptivePerformance.IAdaptivePerformanceSettings::m_scalerProfileList
-	AdaptivePerformanceScalerProfileU5BU5D_t502F55D3686CAB852984FDB6F92431963616F4B7* ___m_scalerProfileList_10;
+	AdaptivePerformanceScalerProfileU5BU5D_t502F55D3686CAB852984FDB6F92431963616F4B7* ___m_scalerProfileList_11;
 	// System.Int32 UnityEngine.AdaptivePerformance.IAdaptivePerformanceSettings::m_DefaultScalerProfilerIndex
-	int32_t ___m_DefaultScalerProfilerIndex_11;
+	int32_t ___m_DefaultScalerProfilerIndex_12;
 };
 
 // UnityEngine.AdaptivePerformance.Samsung.Android.SamsungGameSDKAdaptivePerformanceSubsystem
@@ -1599,11 +1601,11 @@ struct AdaptivePerformanceLoaderHelper_t43D3768280F68D5528D8DCF87E0FC143DCF9A14F
 struct SamsungAndroidProviderSettings_tB080FCD43F6D764EE547C8748FA7DAFC02505FBC  : public IAdaptivePerformanceSettings_tFB49C60F821F093D3F18E8DC115E7D929E6C86C8
 {
 	// System.Boolean UnityEngine.AdaptivePerformance.Samsung.Android.SamsungAndroidProviderSettings::m_SamsungProviderLogging
-	bool ___m_SamsungProviderLogging_12;
+	bool ___m_SamsungProviderLogging_13;
 	// System.Boolean UnityEngine.AdaptivePerformance.Samsung.Android.SamsungAndroidProviderSettings::m_HighSpeedVRR
-	bool ___m_HighSpeedVRR_13;
+	bool ___m_HighSpeedVRR_14;
 	// System.Boolean UnityEngine.AdaptivePerformance.Samsung.Android.SamsungAndroidProviderSettings::m_AutomaticVRR
-	bool ___m_AutomaticVRR_14;
+	bool ___m_AutomaticVRR_15;
 };
 
 // UnityEngine.AdaptivePerformance.AdaptiveVariableRefreshRate
@@ -2006,7 +2008,7 @@ struct NativeApi_tFF0F6E5361AD469984ECDCD91EF75F312E3E7F65_StaticFields
 struct SamsungAndroidProviderSettings_tB080FCD43F6D764EE547C8748FA7DAFC02505FBC_StaticFields
 {
 	// UnityEngine.AdaptivePerformance.Samsung.Android.SamsungAndroidProviderSettings UnityEngine.AdaptivePerformance.Samsung.Android.SamsungAndroidProviderSettings::s_RuntimeInstance
-	SamsungAndroidProviderSettings_tB080FCD43F6D764EE547C8748FA7DAFC02505FBC* ___s_RuntimeInstance_15;
+	SamsungAndroidProviderSettings_tB080FCD43F6D764EE547C8748FA7DAFC02505FBC* ___s_RuntimeInstance_16;
 };
 
 // UnityEngine.AdaptivePerformance.Samsung.Android.SamsungAndroidProviderSettings
@@ -3387,7 +3389,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool SamsungAndroidProviderSettings_get_samsu
 {
 	{
 		// get { return m_SamsungProviderLogging; }
-		bool L_0 = __this->___m_SamsungProviderLogging_12;
+		bool L_0 = __this->___m_SamsungProviderLogging_13;
 		return L_0;
 	}
 }
@@ -3397,7 +3399,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SamsungAndroidProviderSettings_set_samsu
 	{
 		// set { m_SamsungProviderLogging = value; }
 		bool L_0 = ___0_value;
-		__this->___m_SamsungProviderLogging_12 = L_0;
+		__this->___m_SamsungProviderLogging_13 = L_0;
 		// set { m_SamsungProviderLogging = value; }
 		return;
 	}
@@ -3407,7 +3409,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool SamsungAndroidProviderSettings_get_highS
 {
 	{
 		// get { return m_HighSpeedVRR; }
-		bool L_0 = __this->___m_HighSpeedVRR_13;
+		bool L_0 = __this->___m_HighSpeedVRR_14;
 		return L_0;
 	}
 }
@@ -3417,7 +3419,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SamsungAndroidProviderSettings_set_highS
 	{
 		// set { m_HighSpeedVRR = value; }
 		bool L_0 = ___0_value;
-		__this->___m_HighSpeedVRR_13 = L_0;
+		__this->___m_HighSpeedVRR_14 = L_0;
 		// set { m_HighSpeedVRR = value; }
 		return;
 	}
@@ -3427,7 +3429,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool SamsungAndroidProviderSettings_get_autom
 {
 	{
 		// get { return m_AutomaticVRR; }
-		bool L_0 = __this->___m_AutomaticVRR_14;
+		bool L_0 = __this->___m_AutomaticVRR_15;
 		return L_0;
 	}
 }
@@ -3437,7 +3439,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SamsungAndroidProviderSettings_set_autom
 	{
 		// set { m_AutomaticVRR = value; }
 		bool L_0 = ___0_value;
-		__this->___m_AutomaticVRR_14 = L_0;
+		__this->___m_AutomaticVRR_15 = L_0;
 		// set { m_AutomaticVRR = value; }
 		return;
 	}
@@ -3453,8 +3455,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SamsungAndroidProviderSettings_Awake_mBE
 	}
 	{
 		// s_RuntimeInstance = this;
-		((SamsungAndroidProviderSettings_tB080FCD43F6D764EE547C8748FA7DAFC02505FBC_StaticFields*)il2cpp_codegen_static_fields_for(SamsungAndroidProviderSettings_tB080FCD43F6D764EE547C8748FA7DAFC02505FBC_il2cpp_TypeInfo_var))->___s_RuntimeInstance_15 = __this;
-		Il2CppCodeGenWriteBarrier((void**)(&((SamsungAndroidProviderSettings_tB080FCD43F6D764EE547C8748FA7DAFC02505FBC_StaticFields*)il2cpp_codegen_static_fields_for(SamsungAndroidProviderSettings_tB080FCD43F6D764EE547C8748FA7DAFC02505FBC_il2cpp_TypeInfo_var))->___s_RuntimeInstance_15), (void*)__this);
+		((SamsungAndroidProviderSettings_tB080FCD43F6D764EE547C8748FA7DAFC02505FBC_StaticFields*)il2cpp_codegen_static_fields_for(SamsungAndroidProviderSettings_tB080FCD43F6D764EE547C8748FA7DAFC02505FBC_il2cpp_TypeInfo_var))->___s_RuntimeInstance_16 = __this;
+		Il2CppCodeGenWriteBarrier((void**)(&((SamsungAndroidProviderSettings_tB080FCD43F6D764EE547C8748FA7DAFC02505FBC_StaticFields*)il2cpp_codegen_static_fields_for(SamsungAndroidProviderSettings_tB080FCD43F6D764EE547C8748FA7DAFC02505FBC_il2cpp_TypeInfo_var))->___s_RuntimeInstance_16), (void*)__this);
 		// }
 		return;
 	}
@@ -3470,7 +3472,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR SamsungAndroidProviderSettings_tB080FCD43F6D7
 	}
 	{
 		// settings = s_RuntimeInstance;
-		SamsungAndroidProviderSettings_tB080FCD43F6D764EE547C8748FA7DAFC02505FBC* L_0 = ((SamsungAndroidProviderSettings_tB080FCD43F6D764EE547C8748FA7DAFC02505FBC_StaticFields*)il2cpp_codegen_static_fields_for(SamsungAndroidProviderSettings_tB080FCD43F6D764EE547C8748FA7DAFC02505FBC_il2cpp_TypeInfo_var))->___s_RuntimeInstance_15;
+		SamsungAndroidProviderSettings_tB080FCD43F6D764EE547C8748FA7DAFC02505FBC* L_0 = ((SamsungAndroidProviderSettings_tB080FCD43F6D764EE547C8748FA7DAFC02505FBC_StaticFields*)il2cpp_codegen_static_fields_for(SamsungAndroidProviderSettings_tB080FCD43F6D764EE547C8748FA7DAFC02505FBC_il2cpp_TypeInfo_var))->___s_RuntimeInstance_16;
 		// return settings;
 		return L_0;
 	}
@@ -3480,7 +3482,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SamsungAndroidProviderSettings__ctor_m6B
 {
 	{
 		// bool m_AutomaticVRR = true;
-		__this->___m_AutomaticVRR_14 = (bool)1;
+		__this->___m_AutomaticVRR_15 = (bool)1;
 		IAdaptivePerformanceSettings__ctor_mBEEA4933FD88BF7E3C20FAAE1E8BEAF3EBB18379(__this, NULL);
 		return;
 	}
@@ -9733,7 +9735,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR SamsungAndroidProviderSettings_tB
 	}
 	{
 		// settings = s_RuntimeInstance;
-		SamsungAndroidProviderSettings_tB080FCD43F6D764EE547C8748FA7DAFC02505FBC* L_0 = ((SamsungAndroidProviderSettings_tB080FCD43F6D764EE547C8748FA7DAFC02505FBC_StaticFields*)il2cpp_codegen_static_fields_for(SamsungAndroidProviderSettings_tB080FCD43F6D764EE547C8748FA7DAFC02505FBC_il2cpp_TypeInfo_var))->___s_RuntimeInstance_15;
+		SamsungAndroidProviderSettings_tB080FCD43F6D764EE547C8748FA7DAFC02505FBC* L_0 = ((SamsungAndroidProviderSettings_tB080FCD43F6D764EE547C8748FA7DAFC02505FBC_StaticFields*)il2cpp_codegen_static_fields_for(SamsungAndroidProviderSettings_tB080FCD43F6D764EE547C8748FA7DAFC02505FBC_il2cpp_TypeInfo_var))->___s_RuntimeInstance_16;
 		// return settings;
 		return L_0;
 	}
@@ -9742,7 +9744,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool SamsungAndroidProviderSettin
 {
 	{
 		// get { return m_SamsungProviderLogging; }
-		bool L_0 = __this->___m_SamsungProviderLogging_12;
+		bool L_0 = __this->___m_SamsungProviderLogging_13;
 		return L_0;
 	}
 }
@@ -9951,7 +9953,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool SamsungAndroidProviderSettin
 {
 	{
 		// get { return m_AutomaticVRR; }
-		bool L_0 = __this->___m_AutomaticVRR_14;
+		bool L_0 = __this->___m_AutomaticVRR_15;
 		return L_0;
 	}
 }
@@ -10000,7 +10002,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool SamsungAndroidProviderSettin
 {
 	{
 		// get { return m_HighSpeedVRR; }
-		bool L_0 = __this->___m_HighSpeedVRR_13;
+		bool L_0 = __this->___m_HighSpeedVRR_14;
 		return L_0;
 	}
 }
@@ -10014,7 +10016,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void SamsungAndroidProviderSettin
 	{
 		// set { m_AutomaticVRR = value; }
 		bool L_0 = ___0_value;
-		__this->___m_AutomaticVRR_14 = L_0;
+		__this->___m_AutomaticVRR_15 = L_0;
 		// set { m_AutomaticVRR = value; }
 		return;
 	}

@@ -193,11 +193,16 @@ UnityEngine.Application::set_targetFrameRate
 UnityEngine.Application::get_platform
 UnityEngine.Audio.AudioMixer::GetFloat
 UnityEngine.Audio.AudioMixer::SetFloat
+UnityEngine.AudioClip::get_length
 UnityEngine.AudioSettings::StartAudioOutput
 UnityEngine.AudioSettings::StopAudioOutput
+UnityEngine.AudioSource::get_isPlaying
 UnityEngine.AudioSource::GetPitch
 UnityEngine.AudioSource::get_volume
+UnityEngine.AudioSource::PlayHelper
 UnityEngine.AudioSource::SetPitch
+UnityEngine.AudioSource::Stop
+UnityEngine.AudioSource::set_clip
 UnityEngine.AudioSource::set_volume
 UnityEngine.Behaviour::get_enabled
 UnityEngine.Behaviour::get_isActiveAndEnabled
@@ -812,6 +817,7 @@ UnityEngine.SystemInfo::SupportsTextureFormatNative
 UnityEngine.SystemInfo::GetMaxRenderTextureSize
 UnityEngine.SystemInfo::GetMaxTextureSize
 UnityEngine.SystemInfo::GetDeviceModel
+UnityEngine.SystemInfo::GetOperatingSystem
 UnityEngine.SystemInfo::GetCompatibleFormat
 UnityEngine.SystemInfo::GetGraphicsFormat
 UnityEngine.SystemInfo::GetOperatingSystemFamily
