@@ -4,7 +4,6 @@ using UnityEngine;
 
 namespace PCase
 {
-
     class RocketArrive
     {
         public GameObject gameObject;
@@ -13,7 +12,7 @@ namespace PCase
 
     [RequireComponent(typeof(GravityProvider))]
     [RequireComponent(typeof(NeighbourUpdateProvider))]
-    [RequireComponent(typeof(GameGrid))]
+    [RequireComponent(typeof(GridController))]
     public class FireRocketProvider : Provider
     {
         public GameObject rocket { get; private set; } = null;
@@ -23,19 +22,20 @@ namespace PCase
         void Start()
         {
             gravityProvider = GetComponent<GravityProvider>();
-            grid = GetComponent<GameGrid>();
+            grid = GetComponent<GridController>();
         }
 
         public override List<Action> Run(Action action)
         {
             List<Action> actions = new List<Action>();
+
             if (rocket != null)
             {
                 actions.Add(new Action(grid, gravityProvider));
 
                 RocketBlock rocketBlock = rocket.GetComponent<RocketBlock>();
-
                 NeighbourUpdateProvider nup = GetComponent<NeighbourUpdateProvider>();
+
                 nup.AddDeletedBlocks(new List<GameObject> { rocket });
 
                 if (rocketBlock != null)
@@ -62,60 +62,68 @@ namespace PCase
 
         private List<GameObject> Fire(Action action, RocketBlock rocketBlock)
         {
+            HandleRocketLaunch(action, rocketBlock);
+
+            List<RocketArrive> affected = CollectAffectedBlocks(action, rocketBlock);
+            return DestroyAffectedBlocks(action, affected);
+        }
+
+        private void HandleRocketLaunch(Action action, RocketBlock rocketBlock)
+        {
             int x = rocketBlock.x;
             int y = rocketBlock.y;
 
             action.grid.SetBlock(x, y, null);
             rocketBlock.Fly(action, 0.2f);
+        }
 
+        private List<RocketArrive> CollectAffectedBlocks(Action action, RocketBlock rocketBlock)
+        {
             List<RocketArrive> affected = new();
-            List<GameObject> destroyed = new();
-            int maxDistance = 0;
+            int x = rocketBlock.x;
+            int y = rocketBlock.y;
 
             if (rocketBlock.Direction == RocketDirection.HORIZONTAL)
             {
-                for (int i = x - 1, d = 1; i >= 0; i--, d++)
-                {
-                    GameObject block = action.grid.GetBlock(i, y);
-                    if (block != null)
-                    {
-                        affected.Add(new RocketArrive { gameObject = block, distance = d });
-                        maxDistance = Mathf.Max(maxDistance, d);
-                    }
-                }
-
-                for (int i = x + 1, d = 1; i < action.grid.xSize; i++, d++)
-                {
-                    GameObject block = action.grid.GetBlock(i, y);
-                    if (block != null)
-                    {
-                        affected.Add(new RocketArrive { gameObject = block, distance = d });
-                        maxDistance = Mathf.Max(maxDistance, d);
-                    }
-                }
+                CollectInDirection(action.grid, affected, x, y, -1, 0); // Left
+                CollectInDirection(action.grid, affected, x, y, 1, 0);  // Right
             }
             else
             {
-                for (int j = y - 1, d = 1; j >= 0; j--, d++)
+                CollectInDirection(action.grid, affected, x, y, 0, -1); // Down
+                CollectInDirection(action.grid, affected, x, y, 0, 1);  // Up
+            }
+
+            return affected;
+        }
+
+        private void CollectInDirection(GridController grid, List<RocketArrive> affected, int startX, int startY, int dx, int dy)
+        {
+            int x = startX + dx;
+            int y = startY + dy;
+            int distance = 1;
+
+            while (x >= 0 && x < grid.xSize && y >= 0 && y < grid.ySize)
+            {
+                GameObject block = grid.GetBlock(x, y);
+                if (block != null)
                 {
-                    GameObject block = action.grid.GetBlock(x, j);
-                    if (block != null)
-                    {
-                        affected.Add(new RocketArrive { gameObject = block, distance = d });
-                        maxDistance = Mathf.Max(maxDistance, d);
-                    }
+                    affected.Add(new RocketArrive { gameObject = block, distance = distance });
                 }
 
-                for (int j = y + 1, d = 1; j < action.grid.ySize; j++, d++)
-                {
-                    GameObject block = action.grid.GetBlock(x, j);
-                    if (block != null)
-                    {
-                        affected.Add(new RocketArrive { gameObject = block, distance = d });
-                        maxDistance = Mathf.Max(maxDistance, d);
-                    }
-                }
+                x += dx;
+                y += dy;
+                distance++;
             }
+        }
+
+        private List<GameObject> DestroyAffectedBlocks(Action action, List<RocketArrive> affected)
+        {
+            List<GameObject> destroyed = new();
+            int maxDistance = 0;
+
+            foreach (var ra in affected)
+                maxDistance = Mathf.Max(maxDistance, ra.distance);
 
             foreach (RocketArrive ra in affected)
             {
@@ -125,7 +133,6 @@ namespace PCase
                     float t = (float)ra.distance / maxDistance;
                     float duration = Mathf.Lerp(0.05f, 0.2f, t);
                     action.grid.SetBlock(b.x, b.y, null);
-
                     b.Pop(action, duration);
                     destroyed.Add(ra.gameObject);
                 }
@@ -133,7 +140,5 @@ namespace PCase
 
             return destroyed;
         }
-
     }
-
 }

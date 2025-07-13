@@ -34,7 +34,7 @@ namespace PCase
 
             if (popAudioName != null)
             {
-                AudioManager.Instance.Play(popAudioName);
+                AudioContoller.Instance.Play(popAudioName);
             }
 
             transform.DOScale(Vector3.zero, dur)

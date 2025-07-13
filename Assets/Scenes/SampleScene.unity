@@ -999,7 +999,7 @@ GameObject:
   - component: {fileID: 1034762212}
   - component: {fileID: 1034762211}
   m_Layer: 0
-  m_Name: AudioManager
+  m_Name: Audio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1014,7 +1014,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1034762210}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 472c539bdff06fa47b6a7b3f113bbbed, type: 3}
+  m_Script: {fileID: 11500000, guid: 8269827c64524ac42a3ca1a43d4b011d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   audioClips:
@@ -1130,7 +1130,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1034762210}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 185.65332, y: 864.1488, z: -11.468618}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1359,7 +1359,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1473030979}
   - component: {fileID: 1473030980}
-  - component: {fileID: 1473030984}
+  - component: {fileID: 1473030991}
   - component: {fileID: 1473030981}
   - component: {fileID: 1473030982}
   - component: {fileID: 1473030986}
@@ -1428,24 +1428,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f9da65e30634874db34f34723c1122e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1473030984
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1473030978}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b1ff70942b8675942a337584fa6a6dca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movesPanel: {fileID: 1155756912}
-  goal1Panel: {fileID: 619354800}
-  goal2Panel: {fileID: 28274121}
-  image1Panel: {fileID: 1556578530}
-  image2Panel: {fileID: 1247609673}
-  generator: {fileID: 11400000, guid: e6bf6762781a5eb4884835bbc25ad314, type: 2}
 --- !u!114 &1473030985
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1518,6 +1500,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19fec69f51ab3144ca2d1124977deb7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1473030991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1473030978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e404361576c0154fa143106dff9430f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movesPanel: {fileID: 1155756912}
+  goal1Panel: {fileID: 619354800}
+  goal2Panel: {fileID: 28274121}
+  image1Panel: {fileID: 1556578530}
+  image2Panel: {fileID: 1247609673}
+  generator: {fileID: 11400000, guid: e6bf6762781a5eb4884835bbc25ad314, type: 2}
 --- !u!1 &1556578528
 GameObject:
   m_ObjectHideFlags: 0

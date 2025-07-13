@@ -12,7 +12,7 @@ namespace PCase
     [CreateAssetMenu(fileName = "RandomGridGenerator", menuName = "ScriptableObjects/GridGenerators/RandomGridGenerator")]
     public class RandomGridGenerator : GridGenerator
     {
-        public override void Build(GameGrid grid)
+        public override void Build(GridController grid)
         {
             List<List<GameObject>> blocks = new();
 
@@ -61,7 +61,7 @@ namespace PCase
             grid.CreateGrid(blocks);
         }
 
-        public override GameObject Generate(GameGrid grid, int x, int y, float cellWidth, float cellHeight)
+        public override GameObject Generate(GridController grid, int x, int y, float cellWidth, float cellHeight)
         {
             if (prefabs == null || prefabs.Count == 0)
                 return null;

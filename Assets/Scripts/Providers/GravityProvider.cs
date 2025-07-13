@@ -4,14 +4,14 @@ using UnityEngine;
 namespace PCase
 {
     [RequireComponent(typeof(MoveUpdateProvider))]
-    [RequireComponent(typeof(GameGrid))]
+    [RequireComponent(typeof(GridController))]
     public class GravityProvider : Provider
     {
         private MoveUpdateProvider moveProvider;
 
         void Start()
         {
-            grid = GetComponent<GameGrid>();
+            grid = GetComponent<GridController>();
             moveProvider = GetComponent<MoveUpdateProvider>();
         }
 

@@ -4,14 +4,14 @@ using UnityEngine;
 
 namespace PCase
 {
-    [RequireComponent(typeof(GameGrid))]
+    [RequireComponent(typeof(GridController))]
     public class Provider : MonoBehaviour
     {
-        protected GameGrid grid;
+        protected GridController grid;
 
         void Start()
         {
-            grid = GetComponent<GameGrid>();
+            grid = GetComponent<GridController>();
         }
 
         public virtual List<Action> Run(Action action)

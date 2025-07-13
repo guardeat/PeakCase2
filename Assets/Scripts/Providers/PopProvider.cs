@@ -7,7 +7,7 @@ namespace PCase
 
     [RequireComponent(typeof(GravityProvider))]
     [RequireComponent(typeof(NeighbourUpdateProvider))]
-    [RequireComponent(typeof(GameGrid))]
+    [RequireComponent(typeof(GridController))]
     public class PopProvider : Provider
     {
         public List<GameObject> toDestroy { get; private set; } = new List<GameObject>();
@@ -16,7 +16,7 @@ namespace PCase
         void Start()
         {
             gravityProvider = GetComponent<GravityProvider>();
-            grid = GetComponent<GameGrid>();
+            grid = GetComponent<GridController>();
         }
 
         public override List<Action> Run(Action action)

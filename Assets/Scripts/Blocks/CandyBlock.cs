@@ -88,7 +88,7 @@ namespace PCase
 
                 if (popAudioName != null)
                 {
-                    AudioManager.Instance.Play(popAudioName);
+                    AudioContoller.Instance.Play(popAudioName);
                 }
 
                 Sequence seq = DOTween.Sequence();
@@ -105,7 +105,7 @@ namespace PCase
             }
         }
 
-        private List<GameObject> GetConnectedNeighbors(GameGrid grid)
+        private List<GameObject> GetConnectedNeighbors(GridController grid)
         {
             List<GameObject> connected = new List<GameObject>();
             HashSet<(int, int)> visited = new HashSet<(int, int)>();

@@ -13,14 +13,14 @@ namespace PCase
     {
         public ActionStatus status { get; private set; }
 
-        public GameGrid grid { get; protected set; }
+        public GridController grid { get; protected set; }
         public Provider provider { get; protected set; }
 
         public event System.Action<Action> OnFinished;
 
         public int workerCount { get; protected set; } = 0;
 
-        public Action(GameGrid grid, Provider provider)
+        public Action(GridController grid, Provider provider)
         {
             this.grid = grid;
             this.provider = provider;

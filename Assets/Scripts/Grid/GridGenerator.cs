@@ -22,9 +22,9 @@ namespace PCase
         [Header("Grid Prefabs (Used in Build)")]
         public List<PrefabRow> prefabGrid;
 
-        public abstract void Build(GameGrid grid);
+        public abstract void Build(GridController grid);
 
-        public abstract GameObject Generate(GameGrid grid,  int x, int y, float cellWidth, float cellHeight);
+        public abstract GameObject Generate(GridController grid,  int x, int y, float cellWidth, float cellHeight);
     }
 
 }

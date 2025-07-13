@@ -49,7 +49,7 @@ namespace PCase
 
                 popSequence.OnComplete(() =>
                 {
-                    AudioManager.Instance.Play(popAudioName);
+                    AudioContoller.Instance.Play(popAudioName);
                     Destroy(gameObject);
                     action.WorkFinishCallBack();
                 });

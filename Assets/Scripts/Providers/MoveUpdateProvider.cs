@@ -5,14 +5,14 @@ using UnityEngine;
 namespace PCase
 {
 
-    [RequireComponent(typeof(GameGrid))]
+    [RequireComponent(typeof(GridController))]
     public class MoveUpdateProvider : Provider
     {
         public List<GameObject> movedBlocks { get; private set; } = new List<GameObject>();
 
         void Start()
         {
-            grid = GetComponent<GameGrid>();
+            grid = GetComponent<GridController>();
         }
 
         public override List<Action> Run(Action action)

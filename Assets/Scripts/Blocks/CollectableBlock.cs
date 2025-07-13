@@ -22,7 +22,7 @@ namespace PCase
 
             seq.OnKill(() =>
             {
-                AudioManager.Instance.Play("block_collect");
+                AudioContoller.Instance.Play("block_collect");
                 action.grid.UpdateGoal(gameObject);
                 Destroy(gameObject);
                 //action.WorkFinishCallBack();

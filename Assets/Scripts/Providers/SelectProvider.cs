@@ -5,14 +5,14 @@ using UnityEngine;
 namespace PCase
 {
 
-    [RequireComponent(typeof(GameGrid))]
+    [RequireComponent(typeof(GridController))]
     public class SelectProvider : Provider
     {
         private Vector2Int? lastSelection = null;
 
         void Start()
         {
-            grid = GetComponent<GameGrid>();
+            grid = GetComponent<GridController>();
         }
 
         public override List<Action> Run(Action action)

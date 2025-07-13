@@ -6,7 +6,7 @@ namespace PCase
 {
     [RequireComponent(typeof(SelectProvider))]
     [RequireComponent(typeof(RectTransform))]
-    [RequireComponent(typeof(GameGrid))]
+    [RequireComponent(typeof(GridController))]
     public class InputProvider : Provider
     {
         private RectTransform rectTransform;
@@ -17,7 +17,7 @@ namespace PCase
 
         void Start()
         {
-            grid = GetComponent<GameGrid>();
+            grid = GetComponent<GridController>();
             rectTransform = GetComponent<RectTransform>();
         }
 

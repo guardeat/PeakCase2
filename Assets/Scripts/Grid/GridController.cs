@@ -7,7 +7,7 @@ using UnityEngine.UI;
 namespace PCase
 {
 
-    public class GameGrid : MonoBehaviour
+    public class GridController : MonoBehaviour
     {
         [SerializeField]
         TextMeshProUGUI movesPanel;

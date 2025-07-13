@@ -12,9 +12,9 @@ namespace PCase
         public AudioClip clip;
     }
 
-    public class AudioManager : MonoBehaviour
+    public class AudioContoller : MonoBehaviour
     {
-        public static AudioManager Instance { get; private set; }
+        public static AudioContoller Instance { get; private set; }
 
         [SerializeField]
         private List<NamedAudioClip> audioClips = new();
